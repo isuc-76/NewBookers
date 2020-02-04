@@ -1,0 +1,39 @@
+<div class="sidebar">
+
+<div class="col-xs-4">
+  <ul class="nav nav-pills nav-stacked">
+    <li></li>
+  </ul>
+
+<div class="new">
+ <h3 class="new-title">New book</h3>
+  <%= form_for(@book,url:"/books") do |f| %>
+  
+  <% if @book.errors.any? %>
+    <div class="error">
+      <p class="error-top">
+        <%= pluralize(book.errors.count, "error") %> 
+        prohibited this book from being saved:
+      </p>
+      <ul>
+        <% book.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+        <% end %>
+
+  <p>Title</p>
+    <%= f.text_field :title %>
+ 
+    <p>Body</p>
+    <%= f.text_area :body %><br>
+ 
+    <%= f.submit 'Create Book' %>
+ 
+  <% end %>
+</div>
+
+</div>
+
+</div>
