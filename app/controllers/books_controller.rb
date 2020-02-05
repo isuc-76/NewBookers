@@ -30,6 +30,10 @@ class BooksController < ApplicationController
         @user = @book.user
     end
 
+    def user
+        @users = User.all
+    end
+
     def destroy
         @book = Book.find(params[:id])
         @book.destroy
