@@ -26,6 +26,12 @@ class BooksController < ApplicationController
         @showbook= Book.new
     end
 
+    def destroy
+        @book = Book.find(params[:id])
+        @book.destroy
+        redirect_to action: :index
+    end
+
     private
     def book_params
         params.require(:book).permit(:title, :body)
