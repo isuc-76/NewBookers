@@ -5,6 +5,19 @@
     <li></li>
   </ul>
 
+<div class="side_user">
+  <table>
+    <tr>
+      <th>neme</th>
+      <th><%= user.name %></th>
+    </tr>
+    <tr>
+      <th>introduction</th>
+      <th></th>
+    </tr>
+  </table>
+</div>
+
 <div class="new">
  <h3 class="new-title">New book</h3>
   <%= form_for(book) do |f| %>
