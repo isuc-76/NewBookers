@@ -24,7 +24,9 @@ class BooksController < ApplicationController
     
     def show
         @book = Book.find(params[:id])
+        # def indexと同じ名前は使えない
         @showbook= Book.new
+        # @bookの内容をそのまま下の右辺に代入、@bookに入っているuser情報を取り出している。
         @user = @book.user
     end
 
