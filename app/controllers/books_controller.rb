@@ -9,7 +9,7 @@ class BooksController < ApplicationController
 	    @book.user_id = current_user.id
 	    if @book.save
 	    	flash[:notice] = "Book was successfully created."
-	    redirect_to book_path
+	    redirect_to book_path(@book)
 		else
 			@books = Book.all
 			render action: :index
@@ -24,5 +24,9 @@ class BooksController < ApplicationController
     def show
     end
 
+    private
+    def book_params
+        params.require(:book).permit(:title, :body)
+    end
 
 end
