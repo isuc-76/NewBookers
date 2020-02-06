@@ -5,7 +5,7 @@
 
                 <div class="form-user style-1 rounded has-shadow-1">
                     <div class="form-header text-center">
-                        <h2 class="form-header-title">Sign in</h2>
+                        <h2 class="form-header-title">Log in</h2>
                     </div>
                     <div class="form-body">
 
@@ -20,18 +20,19 @@
                       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
                         <div class="form-group has-icon">
                           <label class="control-label sr-only" for="inputName">Name</label><br>
-                          <input type="text" class="form-control" id="inputEmail" placeholder="">
+                          <<%= f.email_field :email, autofocus: true, class:"form-control", id:"inputEmail", placeholder:"メールアドレス"%>
                           <span class="fa fa-user form-control-icon" aria-hidden="true"></span>
                         </div>
                         <div class="form-group has-icon">
                           <label class="control-label sr-only" for="inputPassword">Password</label><br>
-                          <input type="password" class="form-control" id="inputPassword" placeholder="">
+                         <%= f.password_field :password, autocomplete: "off", class:"form-control", id:"inputPassword", placeholder:"パスワード" %>
                           <span class="fa fa-lock form-control-icon" aria-hidden="true"></span>
                         </div>
 
-                        <button type="submit" class="btn btn-lg btn-block btn-base-1 mt-20">Sign up</button><br>
-                        <button type="submit" class="btn btn-lg btn-block btn-base-1 mt-20">Log in</button>
+
+                        <%= f.submit "Log in", class:"btn btn-lg btn-block btn-base-1 mt-20" %>
                       <% end %>
+                      <%= link_to "Sign up", new_user_registration_path %>
 
                     </div>
                 </div>

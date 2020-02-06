@@ -6,8 +6,15 @@
   </ul>
 
 <div class="side_user">
+
+
   <table>
     <tr>
+      <tb><%= attachment_image_tag @user, :profile_image, :fill, 60, 60, format: 'jpeg', class: "img-circle pull-left profile-img", fallback: "no_image.jpg" %>
+          <%= if @user.id == current_user.id %>
+          <%= link_to "編集", edit_user_path(@user) %>
+          <% end %>
+      </tb>
       <th>neme</th>
       <th><%= user.name %></th>
     </tr>
