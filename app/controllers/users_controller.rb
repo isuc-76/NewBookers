@@ -15,12 +15,12 @@ class UsersController < ApplicationController
     end
     
     def show
-
+		@user = User.find(params[:id])
+        @books = @user.books
+        @showbook= Book.new
     end
 
-    def user
 
-    end
 
     def destroy
 

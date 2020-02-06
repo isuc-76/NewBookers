@@ -37,14 +37,16 @@
               </li>
               <li class="">
                 <a href="">
-                  <span>Books</span>
+                  <%= link_to "Books", "/books" %>
                 </a>
               </li>
+
+
               <li class="">
-                <a href="">
-                  <span>logut</span>
-                </a>
+                <%= link_to "logout", destroy_user_session_path, method: :delete %>
               </li>
+
+
             </ul>
           
         </div>
