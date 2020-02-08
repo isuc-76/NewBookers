@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_03_075522) do
+ActiveRecord::Schema.define(version: 2020_02_08_083130) do
 
   create_table "books", force: :cascade do |t|
     t.text "title"
@@ -30,6 +30,8 @@ ActiveRecord::Schema.define(version: 2020_02_03_075522) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "username"
+    t.string "profile_image_id"
+    # ↑ rails g migration AddProfileImageIdToUsers profile_image_id:string で追加
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
