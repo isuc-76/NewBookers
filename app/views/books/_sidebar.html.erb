@@ -12,9 +12,13 @@
     <tr>
       <tb><%= attachment_image_tag @user, :profile_image, :fill, 60, 60, format: 'jpeg', class: "img-circle pull-left profile-img", fallback: "no_image.jpg" %>
         <!-- rails g migration AddProfileImageIdToUsers profile_image_id:string を実行しないと表示できない -->
-          <%= link_to "編集", edit_user_path(@user) %>
-          
-      </tb>
+        <% if @user.id == current_user.id %>
+      <br>
+      <%= link_to "編集", edit_user_path(@user) %>
+      <% end %>
+      </tb><br>
+    </tr>
+    <tr>
       <th>neme</th>
       <th><%= user.name %></th>
     </tr>
