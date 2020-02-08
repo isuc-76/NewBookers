@@ -24,7 +24,7 @@
   <tbody>
     <% @users.each do |user| %>
       <tr>
-        <td></td>
+        <td><%= attachment_image_tag user, :profile_image, :fill, 60, 60, format: 'jpeg', class: "img-circle pull-left profile-img", fallback: "no_image.jpg" %></td>
         <td class="tb"><%= user.name %></td>
         <td class="tb"></td>
 
