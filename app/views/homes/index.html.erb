@@ -1,3 +1,10 @@
+<div class="successfully">
+<% if flash[:notice] %>
+  <p><%= flash[:notice] %></p>
+<% end %>
+</div>
+
+
 <%= render 'books/sidebar', book: @showbook, user: @user %>
 
 <div class="show">
