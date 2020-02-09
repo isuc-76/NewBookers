@@ -10,12 +10,28 @@
 
 <h2 class="p_title">Book detail</h2>
 
-<p class="show-text">Title: <%=@book.title %></p>
-<p class="show-text">Body: <%=@book.body %></p>
+<tbody>
+	
+      <tr>
+        <td><%= attachment_image_tag @book.user, :profile_image, :fill, 60, 60, format: 'jpeg', class: "img-circle pull-left profile-img", fallback: "no_image.jpg" %></td>
+        <td class="tb"><%=@book.title %></td>
+        <td class="tb"><%= @book.body %></td>
+        <td class="tb">
+        	<% if @book.user == current_user %>
+        	<%= link_to "Edit", edit_book_path(@book.id) %>
+        	<% end %>
+        </td>
+        <td class="tb">
+	        <% if @book.user == current_user %>
+	        <%= link_to "Destroy", book_path(@book), method: :delete %>
+	        <% end %>
+    	</td>
 
 
-<%= link_to "Edit", edit_book_path(@book.id) %> |
-<%= link_to "Back", books_path %>
+      </tr>
+    
+</tbody>
+
 
 
 </div>
