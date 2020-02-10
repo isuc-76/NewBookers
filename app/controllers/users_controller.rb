@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
 
+before_action :authenticate_user!
+
     def new
     	
     end
@@ -21,14 +23,20 @@ class UsersController < ApplicationController
     end
 
     def edit
+        if
         @user = current_user
+        else
+        redirect_to user_path(@user.id)
+        end
     end
     def update
         @user = User.find(params[:id])
         if
         @user.update(user_params)
         flash[:notice] = "You have updated user successfully."
-        redirect_to homes_path(@user.id)
+        redirect_to user_path(@user.id)
+        else
+            render action: :edit
         end
     end
 

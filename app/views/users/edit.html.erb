@@ -12,6 +12,21 @@
                                 <h2 class="form-header-title">User info</h2>
                             </div>
                             <div class="form-body">
+
+  <% if @user.errors.any? %>
+    <div class="error">
+      <p class="error-top">
+        <%= pluralize(@user.errors.count, "error") %>
+        prohibited this book from being saved:
+      </p>
+      <ul>
+        <% @user.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+        <% end %>
+
                               
 <%= form_for(@user) do |f| %>
     <div class="">

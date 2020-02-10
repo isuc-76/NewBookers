@@ -23,6 +23,18 @@ License URI: http://wrapbootstrap.com
   clear: both;
 }
 
+.notice {
+  background-color: green;
+  color: #white;
+  text-align: center;
+}
+
+.alert {
+  background-color: red;
+  color: #white;
+  text-align: center;
+}
+
 .header {
   position: relative;
   background-color: black;
