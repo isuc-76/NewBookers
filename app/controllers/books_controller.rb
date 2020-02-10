@@ -59,13 +59,13 @@ before_action :correct_user, only: [:edit, :update]
 
     private
 
-  def correct_user
-    @book = Book.find(params[:id])
-    @user = @book.user
-    if current_user != @user
-      redirect_to books_path
-    end
-  end
+      def correct_user
+        @book = Book.find(params[:id])
+        @user = @book.user
+        if current_user != @user
+          redirect_to books_path
+        end
+      end
 
     def book_params
         params.require(:book).permit(:title, :body)
