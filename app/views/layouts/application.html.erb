@@ -29,26 +29,32 @@
             <ul class="nav-list">
 	      	  	<li class="">
                 <% if current_user %>
+                <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
                 <%= link_to "Home", "/homes" %>
                 <% end %>
                 <% if current_user.nil? %>
+                <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
                 <%= link_to "Home", root_path %>
                 <% end %>
               </li>
               <li class="">
                 <% if current_user %>
+                <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
                 <%= link_to "Users", "/users" %>
                                     <!--↑ファイル名  -->
                 <% end %>
                 <% if current_user.nil? %>
+                <span class="glyphicon glyphicon-link" aria-hidden="true"></span>
                 <%= link_to "About", "/abouts" %>
                 <% end %>
               </li>
               <li class="">
                 <% if current_user %>
+                <span class="glyphicon glyphicon-book" aria-hidden="true"></span>
                 <%= link_to "Books", "/books" %>
                 <% end %>
                 <% if current_user.nil? %>
+                <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
                 <%= link_to "Sign Up", new_user_registration_path %>
                 <% end %>
               </li>
@@ -56,9 +62,11 @@
 
               <li class="">
                 <% if current_user %>
+                <span class="glyphicon glyphicon-log-out" aria-hidden="true"></span>
                 <%= link_to "logout", destroy_user_session_path, method: :delete %>
                 <% end %>
                 <% if current_user.nil? %>
+                <span class="glyphicon glyphicon-log-in" aria-hidden="true"></span>
                 <%= link_to "Log in", new_user_session_path %>
                 <% end %>
               </li>

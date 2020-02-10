@@ -14,7 +14,7 @@
         <!-- rails g migration AddProfileImageIdToUsers profile_image_id:string を実行しないと表示できない -->
         <% if @user.id == current_user.id %>
       <br>
-      <%= link_to "編集", edit_user_path(@user) %>
+      
       <% end %>
       </tb><br>
     </tr>
@@ -26,6 +26,13 @@
       <th>introduction</th>
       <th><%= user.introduction %></th>
     </tr>
+    <tr>
+      <th>
+        <%= link_to edit_user_path(@user), class: 'btn btn-default' do %>
+        <span class="glyphicon glyphicon-wrench" aria-hidden="true"></span>
+        <% end %>
+      </th>
+    </tr>
   </table>
 </div>
 
@@ -33,24 +40,12 @@
  <h3 class="new-title">New book</h3>
   <%= form_for(book) do |f| %>
   
-  <% if book.errors.any? %>
-    <div class="error">
-      <p class="error-top">
-        <%= pluralize(book.errors.count, "error") %>
-        prohibited this book from being saved:
-      </p>
-      <ul>
-        <% book.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
-    </div>
-        <% end %>
+
 
   <p>Title</p>
     <%= f.text_field :title %>
  
-    <p>Body</p>
+    <p>Opinion</p>
     <%= f.text_area :body %><br>
  
     <%= f.submit 'Create Book' %>
