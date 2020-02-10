@@ -25,6 +25,7 @@ License URI: http://wrapbootstrap.com
 
 .header {
   position: relative;
+  background-color: black;
 }
 .header .navbar-header {
   padding: 0;
