@@ -4,7 +4,16 @@
 <% end %>
 </div>
 
+
+<div class="container">
+  <div class="row">
+<!-- ↑　サイドバーを含めた大きなコンテナを設置 -->
+
 <%= render 'books/sidebar', book: @showbook, user: @user %>
+
+<div class="col-xs-9">
+<!-- ↑部分テンプレートの下に設置 -->
+
 
 <div class="show">
 
@@ -41,4 +50,9 @@
 
 
 
+</div>
+
+
+    </div>
+  </div>
 </div>
