@@ -64,7 +64,9 @@
 
               <li class="nav-list-item">
                 <% if user_signed_in? %>
-                <%= link_to " logout", destroy_user_session_path, class:"glyphicon glyphicon-log-in", style:"color: gray;" %>  
+                <%= link_to destroy_user_session_path, method: :delete do %>
+                <span class="glyphicon glyphicon-log-out" aria-hidden="true"></span> logout
+                <% end %>
                 <% else %>
                 <%= link_to new_user_session_path do %>
                 <span class="glyphicon glyphicon-log-in" aria-hidden="true"></span> login
